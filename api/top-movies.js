@@ -1,4 +1,4 @@
-const apiKey = process.env.API_kEY
+const apiKey = process.env.API_KEY
 const options = {
     method: "GET",
     headers: {
