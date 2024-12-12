@@ -2,6 +2,7 @@ const filter = (arr) => {
     return arr.map(item => ({
         id: item?.id,
         backdrop_path: item?.backdrop_path,
+        name: item?.name,
         title: item?.title,
         original_title: item?.original_title,
         overview: item?.overview,
@@ -20,4 +21,22 @@ const filter = (arr) => {
     }))
 }
 
-export default filter
+const actorsFilter = (arr) => {
+    return arr.map(item => ({
+        id: item?.id,
+        profile_path: item?.profile_path,
+        name: item?.name,
+        title: item?.title,
+        original_title: item?.original_title,
+        popularity: item?.popularity,
+        known_for: item.known_for ? item.known_for.map(item => ({
+            id: item.id,
+            name: item.name,
+            title: item.title,
+            original_title: item.original_title,
+            vote_average: item.vote_average,
+        })) : undefined
+    }))
+}
+
+module.exports = {filter, actorsFilter}
