@@ -9,7 +9,7 @@ const options = {
 
 module.exports = async(req, res) => {
 
-    const id = String(req.query.id || ")
+    const id = 28
     if(!id) return res.status(400).json({error: "Gender id not provided"})
 
     try {
