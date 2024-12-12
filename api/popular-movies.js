@@ -7,7 +7,7 @@ const options = {
     }
 }
 
-import filter from "./fetch-data"
+import filter from "./filter"
 
 module.exports = async(req, res) => {
 
