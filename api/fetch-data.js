@@ -10,13 +10,13 @@ const filter = (arr) => {
         release_date: item?.release_date,
         popularity: item?.popularity,
         first_air_date: item?.first_air_date,
-        known_for: item?.known_for.map(item => ({
+        known_for: item.known_for ? item.known_for.map(item => ({
             id: item.id,
             name: item.name,
             title: item.title,
             original_title: item.original_title,
             vote_average: item.vote_average,
-        }))
+        })) : undefined
     }))
 }
 
