@@ -21,6 +21,7 @@ module.exports = async(req, res) => {
             id: item.id,
             poster_path: item.poster_path
         }))
+        console.log(req)
         return res.status(200).json(filteredResults)
     } catch(err) {
         console.error(err)
