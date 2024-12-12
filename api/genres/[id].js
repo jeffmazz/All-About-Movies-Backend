@@ -9,6 +9,8 @@ const options = {
 
 module.exports = async(req, res) => {
 
+    console.log(`Query Params: ${req.query}`)
+
     const {id} = req.query
     if(!id) return res.status(400).json({error: "Gender id not provided"})
 
