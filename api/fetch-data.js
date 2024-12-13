@@ -10,7 +10,9 @@ const options = {
 import {filter, actorsFilter} from "./filter"
 
 const fetchData = async(url, req, res) => {
-
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
     try {
         const response = await fetch(url, options)
         if(!response.ok) throw new Error("Failed to fetch data from API")
@@ -26,6 +28,9 @@ const fetchData = async(url, req, res) => {
 }
 
 const fetchActorsData = async(url, req, res) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
     try {
         const response = await fetch(url, options)
         if(!response.ok) throw new Error("Failed to fetch data from API")
