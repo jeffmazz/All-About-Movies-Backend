@@ -2,6 +2,7 @@ const filter = (arr) => {
     return arr.map(item => ({
         id: item?.id,
         backdrop_path: item?.backdrop_path,
+        profile_path: item?.profile_path,
         name: item?.name,
         title: item?.title,
         original_title: item?.original_title,
