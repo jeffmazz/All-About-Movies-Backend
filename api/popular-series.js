@@ -4,5 +4,5 @@ import {getPageNumber} from "./functions/getPageNumber"
 module.exports = async(req, res) => {
     const pageNumber = getPageNumber(req)
     const url = `https://api.themoviedb.org/3/tv/popular?language=en-US&page=${pageNumber}`
-    fetchData(url, req, res)
+    await fetchData(url, req, res)
 }

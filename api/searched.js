@@ -6,5 +6,5 @@ module.exports = async(req, res) => {
     if(!q) return res.status(400).json({error: "Query not provided"})
     const pageNumber = getPageNumber(req)
     const url = `https://api.themoviedb.org/3/search/multi?query=${q}&include_adult=false&language=en-US&page=${pageNumber}`
-    fetchData(url, req, res)
+    await fetchData(url, req, res)
 }
