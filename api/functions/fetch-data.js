@@ -19,7 +19,11 @@ const fetchData = async(url, req, res) => {
         const data = await response.json()
         const results = data.results
         const filteredResults = filter(results)
-        return res.status(200).json(filteredResults)
+        const totalPages = data.total_pages || 1
+        return res.status(200).json({
+            results: filteredResults,
+            totalPages
+        })
     } catch(err) {
         console.error(err)
         return res.status(500).json({error: err.message})
@@ -37,7 +41,11 @@ const fetchActorsData = async(url, req, res) => {
         const data = await response.json()
         const results = data.results
         const filteredResults = actorsFilter(results)
-        return res.status(200).json(filteredResults)
+        const totalPages = data.total_pages || 1
+        return res.status(200).json({
+            results: filteredResults,
+            totalPages
+        })
     } catch(err) {
         console.error(err)
         return res.status(500).json({error: err.message})
