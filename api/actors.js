@@ -1,5 +1,5 @@
 import {fetchActorsData} from './functions/fetch-data'
-import {getPageNumber} from "./functions/getPageNumber.js"
+import {getPageNumber} from "./functions/getPageNumber"
 
 module.exports = async(req, res) => {
     const pageNumber = getPageNumber(req)

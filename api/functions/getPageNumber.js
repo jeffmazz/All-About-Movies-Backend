@@ -3,4 +3,4 @@ const getPageNumber = (req) => {
     return page > 0 ? page : 1
 }
 
-module.exports = pageNumber
+module.exports = getPageNumber
