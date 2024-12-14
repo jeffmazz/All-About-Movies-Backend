@@ -1,6 +1,8 @@
-import {fetchData} from "./fetch-data"
+import {fetchData} from "./functions/fetch-data"
+import {getPageNumber} from "./functions/getPageNumber"
 
 module.exports = async(req, res) => {
-    const url = 'https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1'
+    const pageNumber = getPageNumber(req)
+    const url = `https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=${pageNumber}`
     fetchData(url, req, res)
 }
