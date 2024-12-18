@@ -22,12 +22,6 @@ module.exports = async(req, res) => {
         const data = await response.json()
         const results = data.results
         return res.status(200).json(results)
-        const filteredResults = results.map(item => ({
-            id: item.id,
-            poster_path: item.poster_path,
-            title: item?.title
-        }))
-        return res.status(200).json(filteredResults)
     } catch(err) {
         console.error(err)
         return res.status(500).json({error: err.message})
