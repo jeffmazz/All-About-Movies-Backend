@@ -21,7 +21,12 @@ module.exports = async(req, res) => {
         if(!response.ok) throw new Error("Failed to fetch data from API")
         const data = await response.json()
         const results = data.results
-        return res.status(200).json(results)
+        const filteredResults = results.map(item => ({
+            id: item?.id,
+            poster_path: item?.poster_path,
+            title: item?.title
+        }))
+        return res.status(200).json(filteredResults)
     } catch(err) {
         console.error(err)
         return res.status(500).json({error: err.message})
