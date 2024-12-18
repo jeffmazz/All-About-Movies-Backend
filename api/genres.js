@@ -23,7 +23,8 @@ module.exports = async(req, res) => {
         const results = data.results
         const filteredResults = results.map(item => ({
             id: item.id,
-            poster_path: item.poster_path
+            poster_path: item.poster_path,
+            title: item?.title
         }))
         return res.status(200).json(filteredResults)
     } catch(err) {
